@@ -68,7 +68,7 @@ function Timer({ setActiveTimePlayer, isRunningPlayer, rotate, opponentTime, con
         return s.opponentTimer;
     };
     return (
-        <div className={s.wrapperPlayer}>
+        <div className={s.wrapperTimer}>
             <div className={rotate ? s.rotate : s.notRotate}>
                 <h1 className={highlightЕTimer(isRunningPlayer, isTimeCritical)}>{`${minutes}:${seconds}`}</h1>
                 <h2 className={highlightOpponentTimer(isRunningPlayer)}>{opponentTime}</h2>
