@@ -4,6 +4,13 @@ import Controler from './Controler.jsx';
 import Timer from './Timer.jsx';
 
 function Game() {
+    React.useEffect(()=>{
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth' // Плавная прокрутка
+          });
+    },[])
+
     const [timePlayer1, setTimePlayer1] = React.useState('');
     const [timePlayer2, setTimePlayer2] = React.useState('');
     const [activePlayer, setActivePlayer] = React.useState(1);
