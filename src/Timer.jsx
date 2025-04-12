@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './style.module.css';
-function Timer({ setActiveTimePlayer, isRunningPlayer, rotate, opponentTime, controler, setControler }) {
+function Timer({ setTimeCurrentPlayer, isRunningPlayer, rotate, opponentTime, controler, setControler }) {
     const hour = 60;
     const localMinutes = Number(localStorage.getItem('minutes'));
     const initSeconds = localMinutes * hour;
@@ -14,7 +14,7 @@ function Timer({ setActiveTimePlayer, isRunningPlayer, rotate, opponentTime, con
     const [seconds, setSeconds] = React.useState('00');
 
     const [isTimeCritical, setIsTimeCritical] = React.useState(false);
-
+   
     React.useEffect(() => {
         if (controler === 'restart') {
             setMinutes(initMinutes);
@@ -26,7 +26,7 @@ function Timer({ setActiveTimePlayer, isRunningPlayer, rotate, opponentTime, con
 
     React.useEffect(() => {
         let timerId;
-        setActiveTimePlayer(`${minutes} : ${seconds}`);
+        setTimeCurrentPlayer(`${minutes} : ${seconds}`);
 
         function tick() {
             const mins = Math.floor(time / hour);
@@ -55,7 +55,7 @@ function Timer({ setActiveTimePlayer, isRunningPlayer, rotate, opponentTime, con
         }
 
         return () => clearInterval(timerId);
-    }, [time, isRunningPlayer, minutes, seconds, setActiveTimePlayer, isTimeCritical, controler]);
+    }, [time, isRunningPlayer, minutes, seconds, setTimeCurrentPlayer, isTimeCritical, controler]);
 
     const highlightЕTimer = () => {
         if (isTimeCritical) return `${s.timer} ${s.criticalTime}`;

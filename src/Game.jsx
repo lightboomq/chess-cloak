@@ -4,18 +4,13 @@ import Controler from './Controler.jsx';
 import Timer from './Timer.jsx';
 
 function Game() {
-    React.useEffect(()=>{
-        window.scrollTo({
-            top: document.documentElement.scrollHeight,
-            behavior: 'smooth' // Плавная прокрутка
-          });
-    },[])
-
     const [timePlayer1, setTimePlayer1] = React.useState('');
     const [timePlayer2, setTimePlayer2] = React.useState('');
     const [activePlayer, setActivePlayer] = React.useState(1);
-    const [controler, setControler] = React.useState('play');
+    const [controler, setControler] = React.useState('pause');
 
+
+    
     const switchPlayer = () => {
         if (controler === 'pause') return;
         const str = `
@@ -33,7 +28,7 @@ function Game() {
             <div onClick={switchPlayer} className={activePlayer === 1 ? s.field : `${s.field} ${s.pushField}`} />
 
             <Timer
-                setActiveTimePlayer={setTimePlayer1}
+                setTimeCurrentPlayer={setTimePlayer1}
                 isRunningPlayer={activePlayer === 1}
                 opponentTime={timePlayer2}
                 rotate={true}
@@ -41,7 +36,7 @@ function Game() {
                 setControler={setControler}
             />
             <Timer
-                setActiveTimePlayer={setTimePlayer2}
+                setTimeCurrentPlayer={setTimePlayer2}
                 isRunningPlayer={activePlayer === 2}
                 opponentTime={timePlayer1}
                 controler={controler}

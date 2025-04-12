@@ -28,7 +28,7 @@ body{
     width: 100%;
     height: calc(50% - 60px);
     background-color: green;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 300ms ease-in-out;
 }
 .pushField{
     transform: translateY(calc(100%))
@@ -54,7 +54,7 @@ body{
     font-weight: 100;
     font-size: 55px;
     z-index: 2;
-    transition: color 1s;
+    transition: color 350ms;
 }
 .timerActive {
     color: white;
@@ -63,7 +63,7 @@ body{
 .opponentTimer {
     text-align: center;
     z-index: 2;
-    transition: color 550ms;
+    transition: color 350ms;
 }
 .opponentTimerActive {
     color: #38a05b;
