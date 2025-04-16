@@ -22,7 +22,7 @@ function Game() {
     };
 
     return (
-        <div className={s.wrapperPlayer}>
+        <div className={s.wrapper}>
             <Controler controler={controler} setControler={setControler} rotateValue='180deg' />
 
             <div onClick={switchPlayer} className={activePlayer === 1 ? s.field : `${s.field} ${s.pushField}`} />

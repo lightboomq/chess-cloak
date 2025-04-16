@@ -6,6 +6,7 @@ body{
     background-color: #313131;
 }
 .wrapper {
+    position: relative;
     justify-content: center;
     margin: auto;
     max-width: 400px;
@@ -31,10 +32,6 @@ body{
 }
 .pushField{
     transform: translateY(calc(100%))
-}
-.wrapperPlayer{
-    position: relative;
-    height: 100vh;
 }
 .wrapperTimer{
     background-color: #454545;
